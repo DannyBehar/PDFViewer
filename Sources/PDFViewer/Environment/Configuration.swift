@@ -88,7 +88,7 @@ public class PDFConfigBuilder {
 public struct PDFConfiguration: Sendable  {
     public static let `default` = PDFConfiguration()
     
-    public init(autoScales: Bool? = true,
+    public init(autoScales: Bool? = nil,
          backgroundColor: Color? = nil,
          displaysAsBook: Bool? = nil,
          displaysPageBreaks: Bool? = nil,
