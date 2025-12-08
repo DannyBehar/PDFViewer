@@ -1,5 +1,5 @@
+![PDFViewer Branding](./branding.png)
 # PDFViewer
-
 SwiftUI wrapper around `PDFKit`'s `PDFView` that brings environment-driven configuration, markup mode toggles, and per-page overlay hooks to SwiftUI apps.
 
 ## Features
@@ -17,7 +17,7 @@ Add `PDFViewer` as a dependency in your `Package.swift`:
 
 ```swift
 .dependencies: [
-    .package(url: "https://github.com/<your-org>/PDFViewer.git", from: "0.0.1")
+    .package(url: "https://github.com/<your-org>/PDFViewer.git", from: "0.1.0")
 ],
 .targets: [
     .target(
