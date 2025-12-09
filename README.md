@@ -82,10 +82,6 @@ struct ContentView: View {
 - `overlayForPage(_:)` — supply a `PDFPageOverlayProvider` closure returning a `UIView?` per page.
 - `overlayWillFinishDisplayingForPage(_:)` — observe when an overlay stops displaying.
 
-## Development
-- Build: `swift build`
-- Tests: `swift test`
-
 ## Notes
 - If you want to enable page overlays, make sure you have isInMarkupMode set to true.
 - `PDFConfiguration.default` uses the PDFView default options; override individual options with the builder helpers.
