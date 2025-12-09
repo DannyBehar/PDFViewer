@@ -6,11 +6,11 @@ SwiftUI wrapper around `PDFKit`'s `PDFView` that brings environment-driven confi
 - SwiftUI `PDFViewer` that hosts `PDFKit`'s `PDFView`
 - Environment modifiers for display mode, direction, markup mode, and page overlays
 - Builder-based `PDFConfiguration` to control scaling, background color, page breaks, shadows, and more
-- Supports iOS 17+, macOS 11+, and visionOS 1+
+- Supports iOS / iPadOS 17+
 
 ## Requirements
 - Swift 6.2 (swift-tools-version 6.2)
-- Platforms: iOS 17.0+, macOS 11+, visionOS 1+
+- Platforms: iOS / iPadOS 17.0+
 
 ## Installation (Swift Package Manager)
 Add `PDFViewer` as a dependency in your `Package.swift`:
