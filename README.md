@@ -6,18 +6,18 @@ SwiftUI wrapper around `PDFKit`'s `PDFView` that brings environment-driven confi
 - SwiftUI `PDFViewer` that hosts `PDFKit`'s `PDFView`
 - Environment modifiers for display mode, direction, markup mode, and page overlays
 - Builder-based `PDFConfiguration` to control scaling, background color, page breaks, shadows, and more
-- Supports iOS 17+, macOS 11+, and visionOS 1+
+- Supports iOS / iPadOS 17+
 
 ## Requirements
 - Swift 6.2 (swift-tools-version 6.2)
-- Platforms: iOS 17.0+, macOS 11+, visionOS 1+
+- Platforms: iOS / iPadOS 17.0+
 
 ## Installation (Swift Package Manager)
 Add `PDFViewer` as a dependency in your `Package.swift`:
 
 ```swift
 .dependencies: [
-    .package(url: "https://github.com/<your-org>/PDFViewer.git", from: "0.1.0")
+    .package(url: "https://github.com/DannyBehar/PDFViewer.git", from: "0.1.0")
 ],
 .targets: [
     .target(
@@ -39,7 +39,14 @@ import PDFKit
 import PDFViewer
 
 struct ContentView: View {
-    private let document = PDFDocument(url: Bundle.main.url(forResource: "Sample", withExtension: "pdf")!)
+    var document: PDFDocument {
+        guard let url  = Bundle.main.url(forResource: "Sample", withExtension: "pdf"),
+              let doc  = PDFDocument(url: url) else {
+            return PDFDocument()
+        }
+        
+        return doc
+    }
 
     var body: some View {
         PDFViewer(document: document)
@@ -81,10 +88,6 @@ struct ContentView: View {
 - `pdfConfiguration(_:)` — pass a `PDFConfiguration` produced by `PDFConfigBuilder` or `.default`.
 - `overlayForPage(_:)` — supply a `PDFPageOverlayProvider` closure returning a `UIView?` per page.
 - `overlayWillFinishDisplayingForPage(_:)` — observe when an overlay stops displaying.
-
-## Development
-- Build: `swift build`
-- Tests: `swift test`
 
 ## Notes
 - If you want to enable page overlays, make sure you have isInMarkupMode set to true.
