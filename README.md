@@ -17,7 +17,7 @@ Add `PDFViewer` as a dependency in your `Package.swift`:
 
 ```swift
 .dependencies: [
-    .package(url: "https://github.com/<your-org>/PDFViewer.git", from: "0.1.0")
+    .package(url: "https://github.com/DannyBehar/PDFViewer.git", from: "0.1.0")
 ],
 .targets: [
     .target(
@@ -39,7 +39,7 @@ import PDFKit
 import PDFViewer
 
 struct ContentView: View {
-    private let document = PDFDocument(url: Bundle.main.url(forResource: "Sample", withExtension: "pdf")!)
+    private let document = PDFDocument(url: Bundle.main.url(forResource: "Sample", withExtension: "pdf")!)!
 
     var body: some View {
         PDFViewer(document: document)
