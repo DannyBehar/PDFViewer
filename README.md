@@ -39,7 +39,14 @@ import PDFKit
 import PDFViewer
 
 struct ContentView: View {
-    private let document = PDFDocument(url: Bundle.main.url(forResource: "Sample", withExtension: "pdf")!)!
+    var document: PDFDocument {
+        guard let url  = Bundle.main.url(forResource: "Sample", withExtension: "pdf"),
+              let doc  = PDFDocument(url: url) else {
+            return PDFDocument()
+        }
+        
+        return doc
+    }
 
     var body: some View {
         PDFViewer(document: document)
